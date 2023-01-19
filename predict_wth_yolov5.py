@@ -1,5 +1,6 @@
 import numpy as np
 
+
 import os 
 os.environ['TP_CPP_MIN_LOG_LEVEL']='2'
 import sys
@@ -21,10 +22,9 @@ from PIL import Image
 
 path_to_images = 'image_folder'
 path_to_predicted_images = 'predicted_images'
-path_to_model = os.path.join('model', 'wghts_1476_v5m_150ep_1.pt')
+path_to_model = os.path.join('model', 'weights_1476_450_ep.pt')
 path_to_yolo5 = 'yolov5'
 img_size = 640
-
 
 if os.path.isdir(path_to_predicted_images):
     shutil.rmtree(path_to_predicted_images)
@@ -49,8 +49,7 @@ def calc_boxes(img_path, folder_name, model, width=img_size, height=img_size, is
     (предсказание запускается на каждое фото). 
     Далее предсказанное количество бластоспор собраются в лист 
     и их число усредняется."""
-    
-    
+        
     img_name = os.path.basename(img_path)
 
     original_image = Image.open(img_path)
