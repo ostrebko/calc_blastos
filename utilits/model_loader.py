@@ -19,10 +19,9 @@ class LoadModel():
     ...
     """
     
-    def __init__(self, config: dict):
+    def __init__(self, config_json: dict):
         super().__init__()
-        self.config = config
-        self.loaded_model = self.load_model(config=self.config)
+        self.loaded_model = self.load_model(config=config_json)
         
     @staticmethod
     def load_model(config):
