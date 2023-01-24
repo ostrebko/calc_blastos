@@ -18,9 +18,7 @@
 
 Entomopathogenic fungus Beauveria bassiana is a promising basis for biological insecticides for use in crop production. Its ability to cause a deadly infectious process in a wide range of insect pest species makes it possible to create biological preparations based on strains of this species that are not inferior in effectiveness to a significant number of modern chemical insecticides. In addition, biologics based on B. bassiana has a number of advantages over chemical analogues – they are much safer for humans, plants and other environmental objects, have a lower cost, and also often provide a longer protective effect, due to the ability to cause epidemics in insect populations with a high number of individuals (overpopulated populations).  
 
-<p align="center"> 
-<img src="https://en.wikipedia.org/wiki/Beauveria_bassiana#/media/File:Beauveria.jpg" width="450" height="350"> <br>ex.: Grasshoppers (Melanoplus sp.) killed by the fungus Beauveria bassiana. 
-</p>
+![ex.: Grasshoppers (Melanoplus sp.) killed by the fungus Beauveria bassiana](https://en.wikipedia.org/wiki/Beauveria_bassiana#/media/File:Beauveria.jpg)
 
 The most important characteristic of a biopreparation based on an a priori effective strain of entomopathogen is the number of viable cells/mycelium particles/fungal spores per unit volume or mass of the preparation. This indicator is often determined both in the process of developing a biological product and in its industrial production. When using deep cultivation of B. bassiana to obtain live biomass, the main infectious particles in the final product are blastospores – yeast-like single cells. A convenient and fast (not requiring the cultivation of mushroom colonies) method for determining the number of blastospores in a product is direct counting in a counting chamber of a particular design using a microscope; this procedure is well applicable in production processes, but when conducting research on the creation of a bioinsecticide, it takes a lot of the researcher's time, especially if it is necessary to obtain the most reliable data when determining the number of blastospores.  
 
