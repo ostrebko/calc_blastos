@@ -24,7 +24,8 @@ def create_report(config):
     max_col_in_row = config.bar_col_num * config.col_one_bar
     max_row_in_line = 0
     
-    with pd.ExcelWriter('results.xlsx', engine='xlsxwriter') as writer:
+    with pd.ExcelWriter(
+        os.path.join(config.path_to_predicted_images, 'results.xlsx'), engine='xlsxwriter') as writer:
 
         for fold_name in names_pred_list:
             csv_file = pd.read_csv(glob.glob(os.path.join(path_to_pred_img, fold_name,'*.csv'))[0],
