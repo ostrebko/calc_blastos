@@ -9,10 +9,10 @@ from utilits.model_loader import LoadModel
 from utilits.calcs_boxes import BoxesAvgNums
 
 
-def clear_folder(path_to_folder):
-    files_to_remove = glob.glob(os.path.join(path_to_folder, '*'))
-    for f in files_to_remove:
-        shutil.rmtree(f)
+#def clear_folder(path_to_folder):
+    #files_to_remove = glob.glob(os.path.join(path_to_folder, '*'))
+    #for f in files_to_remove:
+    #    shutil.rmtree(f)
 
 
 def create_report(config):
@@ -77,9 +77,12 @@ def calc_avg_wth_crt_reprt(path_to_config): #='config/data_config.json'
                   "\n" "or average number of blastospores on photos in multiple folder "
                   "with create report")
     print(intro_text)
+    
     config = config_reader(path_to_config)
     model = LoadModel(config).loaded_model
-    clear_folder(config.path_to_predicted_images)
+    
+    shutil.rmtree(config.path_to_predicted_images)
+    #clear_folder(config.path_to_predicted_images)
     for fold_name in os.listdir(config.path_to_images):
         #if os.path.isdir(os.path.join(config.path_to_predicted_images, fold_name)):
         #    shutil.rmtree(os.path.join(config.path_to_predicted_images, fold_name))
