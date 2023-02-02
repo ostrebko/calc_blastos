@@ -1,7 +1,7 @@
 {
   
   "//" : "путь к папке с картинками",
-  "path_to_images" : "image_folder", 
+  "path_to_images" : "image_folder/images_to_predict", 
 
   "//" : "путь к папке с картинками с детекированными объектами",
   "path_to_predicted_images" : "predicted_images", 

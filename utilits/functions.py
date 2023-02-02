@@ -72,9 +72,8 @@ def create_report(config):
 
 
 def calc_avg_wth_crt_reprt(path_to_config): #='config/data_config.json'
-    intro_text = ("This app allows to calculate "
-                  "average number of blastospores on photos in one folder "
-                  "or average number of blastospores on photos in multiple folder "
+    intro_text = ("This app allows to calculate average number of blastospores on photos in one folder "
+                  "\n" "or average number of blastospores on photos in multiple folder "
                   "with create report")
     print(intro_text)
     config = config_reader(path_to_config)
@@ -83,7 +82,7 @@ def calc_avg_wth_crt_reprt(path_to_config): #='config/data_config.json'
     for fold_name in os.listdir(config.path_to_images):
         #if os.path.isdir(os.path.join(config.path_to_predicted_images, fold_name)):
         #    shutil.rmtree(os.path.join(config.path_to_predicted_images, fold_name))
-        os.mkdir(os.path.join(config.path_to_predicted_images, fold_name))
+        os.makedirs(os.path.join(config.path_to_predicted_images, fold_name))
         BoxesAvgNums(fold_name, model, config)
     create_report(config)
     print('Well done!!!')
