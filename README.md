@@ -31,3 +31,25 @@ An alternative to direct counting in real time can be automatic software countin
 The purpose of this project is to create an application for calculating the number of blastospores in photographs, followed by obtaining averaged values of the number of blastospores for the necessary groups of photos. The application uses a locally downloaded repository of the github project [YOLOv5](https://github.com/ultralytics/yolov5) from the developer company [Ultralytics](https://ultralytics.com). A pre-trained YOLOv5 model is used to detect blastospores. A detailed description of the steps for training the model is given in the second part of the [final project](https://github.com/ostrebko/skf_final_project), which was performed during the course "Specialization DataScience" in the online school [SkillFactory](https://skillfactory.ru).  
 
 
+
+
+## Docker
+<details>
+  <summary> Type in the console: </summary> <br>
+
+```Python
+# 1. Create a new image (its size is approximately 5.2 Gb)
+docker build -t calc_blastos .
+
+# 2. Run image in container.
+docker run --rm -v $PWD/image_folder/:/image_folder  --name calc_blastos calc_blastos
+
+# 3. In the project directory '/image_folder/predicted_images' will appear 
+# a new file 'results.csv'
+
+# 4. The created container will be automatically deleted 
+# after executing a sequence of commands from the Dockerfile.  
+# Delete the container and image after usage
+docker rmi calc_blastos
+```
+</details>
