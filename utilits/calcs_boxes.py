@@ -20,7 +20,7 @@ import matplotlib.patches as patches
 from PIL import Image
 
 
-class BoxesNums():
+class BoxesOneImgNums():
     """
     Decription ...
     
@@ -94,6 +94,9 @@ class BoxesNums():
         return numb_blasto
 
 
+class BoxesOneFoldNums():
+    pass
+
 
 class BoxesAvgNums():
     """
@@ -124,7 +127,7 @@ class BoxesAvgNums():
             for num, imge in enumerate(imgs_paths, start=1):
                 print(num, imge)              
                 #num_blastos = self.calc_boxes(imge, folder_name, model, is_draw)
-                num_blastos = BoxesNums(imge, model, self.config).num_boxes
+                num_blastos = BoxesOneImgNums(imge, model, self.config).num_boxes
                 print(f'Фото №{num}/{numb_images},', end=' ') 
                 list_to_calc_avg.append(num_blastos)              
                 csv_writer = csv.writer(csvfile, delimiter=';')

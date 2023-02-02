@@ -71,8 +71,12 @@ def create_report(config):
     print('Report created!!!')
 
 
-def calc_avg_num_blastos(path_to_config): #='config/data_config.json'
-    
+def calc_avg_wth_crt_reprt(path_to_config): #='config/data_config.json'
+    intro_text = ("This app allows to calculate "
+                  "average number of blastospores on photos in one folder "
+                  "or average number of blastospores on photos in multiple folder "
+                  "with create report")
+    print(intro_text)
     config = config_reader(path_to_config)
     model = LoadModel(config).loaded_model
     clear_folder(config.path_to_predicted_images)
