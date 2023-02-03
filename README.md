@@ -7,6 +7,7 @@
 * [Data and methods](README.md#Data-and-methods)
 * [Installation](README.md#Installation)
 * [Docker](README.md#Docker)
+* [Create .exe](README.md#Create_exe)
 * [Inference](README.md#Inference)
 * [Experimental data analysis](README.md#Experimental-data-analysis)
 * [Machine learning models structure](README.md#Machine-learning-models-structure)
@@ -31,10 +32,49 @@ An alternative to direct counting in real time can be automatic software countin
 The purpose of this project is to create an application for calculating the number of blastospores in photographs, followed by obtaining averaged values of the number of blastospores for the necessary groups of photos. The application uses a locally downloaded repository of the github project [YOLOv5](https://github.com/ultralytics/yolov5) from the developer company [Ultralytics](https://ultralytics.com). A pre-trained YOLOv5 model is used to detect blastospores. A detailed description of the steps for training the model is given in the second part of the [final project](https://github.com/ostrebko/skf_final_project), which was performed during the course "Specialization DataScience" in the online school [SkillFactory](https://skillfactory.ru).  
 
 
+## Instalation
+<details>
+  
+  <summary> Description: </summary> <br>
+
+<p> Add Short description.<br>
+
+<p> P.S. The description of how to activate the virtual environment was taken from 
+<a href="https://kayumov.ru/536/">Ruslan Kayumov</a>.<br>
+
+```Python
+# 1. Activate the virtual environment in which you plan to launch the application (we will use VsCode)
+
+# 1a. Run VS Code as an administrator, go to the project directory in PowerShell, execute the code below, the env folder containing the virtual environment files will appear
+python -m venv env
+
+# 1b. To change the policy, in PowerShell type
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# 1c. Enter the environment folder (env), run the command
+env\Scripts\activate.ps1
+
+# 1d. An environment marker (env) will appear at the beginning of the line in PowerShell, but VS Code may still not know anything about it. Press Ctrl+Shift + P, type Python: Select Interpreter
+# Specify the desired path to python.exe in the env environment folder, this will be displayed at the bottom of the status bar. Now you can install modules only for a specific project.
+
+# 1е. If you need to exit, then execute deactivate in PowerShell, and return to global in the interpreter selection.
+
+# 2. ...
+bash command
+
+# 3. ...
+bash command
+
+# 4. ...
+bash command
+```
+</details>
+
 
 
 ## Docker
 <details>
+  
   <summary> Type in the console: </summary> <br>
 
 ```Python
@@ -51,5 +91,42 @@ docker run --rm -v $PWD/image_folder/:/image_folder  --name calc_blastos calc_bl
 # after executing a sequence of commands from the Dockerfile.  
 # Delete the container and image after usage
 docker rmi calc_blastos
+```
+</details>
+
+
+
+## Create_exe
+<details>
+  <summary> Description: </summary> <br>
+ <p>Creating executable .exe file to run the application may be necessary in some cases. For example, if Docker and/or Python are not installed on the computer, the user does not have the minimum skills to install and configure the necessary programs and libraries, or it is impossible to prepare the computer accordingly beforehand (when demonstrating the program on the Director's or Customer's computer).<br>
+ <p>To create executable .exe file we will use: [PyInstaller](www.pyinstaller.org) and the convenient GUI add-in [auto-py-to-exe](https://pypi.org/project/auto-py-to-exe/).<br>
+ <p>To create executable .exe file type in the console:
+
+```Python
+# 1. Go to the project application and аctivate the virtual environment
+# (see section Introduction)
+
+# 2. Install the PyInstaller package
+pip install pyinstaller
+
+# 3. Install the auto-py-to-exe package
+pip install auto-py-to-exe
+
+# 4. Run the auto-py-to-exe installed app
+auto-py-to-exe 
+
+# 5. In the auto-py-to-exe console window select the parameters: 
+# 5.1 Script Location: Specify the full path to the file main.py
+# 5.2 Onefile (--onedir / --onefile): onefile
+# 5.3 Console Window (--console / --windowed) (to see the work of program): Console Based 
+# 5.4 In Advanced --hidden-import add (set plus three times and add one name of the following libs to each line): 1. cv2  2. yaml  3. seaborn.
+# 5.5 Settings (auto-py-to-exe Specific Options): Specify the full path to the directory of main.py
+# 5.6 The other parameters leave unchanged.
+
+# 6. You can only use the pyinstaller package without installing auto-pytoexe.
+# To do this, after step 2 in the command line, 
+# specifying the correct path to the project "C:/Full/Path/to/main.py ", run:
+pyinstaller --noconfirm --onefile --console --hidden-import "cv2" --hidden-import "yaml" --hidden-import "seaborn"  "C:/Full/Path/to/main.py"
 ```
 </details>
