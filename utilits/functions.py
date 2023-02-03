@@ -73,9 +73,11 @@ def create_report(config):
 
 
 def calc_avg_wth_crt_reprt(path_to_config): #='config/data_config.json'
-    intro_text = ("This app allows to calculate average number of blastospores on photos in one folder "
+    
+    intro_text = ("\n" 
+                  "This app allows to calculate average number of blastospores on photos in one folder "
                   "\n" "or average number of blastospores on photos in multiple folder "
-                  "with create report")
+                  "with create report" "\n")
     print(intro_text)
     
     config = config_reader(path_to_config)
