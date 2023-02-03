@@ -100,7 +100,7 @@ docker rmi calc_blastos
 <details>
   <summary> Description: </summary> <br>
  <p>Creating executable .exe file to run the application may be necessary in some cases. For example, if Docker and/or Python are not installed on the computer, the user does not have the minimum skills to install and configure the necessary programs and libraries, or it is impossible to prepare the computer accordingly beforehand (when demonstrating the program on the Director's or Customer's computer).<br>
- <p>To create executable .exe file we will use: [PyInstaller](www.pyinstaller.org) and the convenient GUI add-in [auto-py-to-exe](https://pypi.org/project/auto-py-to-exe/).<br>
+ <p>To create executable .exe file we will use: <a href="www.pyinstaller.org">PyInstaller</a> and the convenient GUI add-in <a href="https://pypi.org/project/auto-py-to-exe/">auto-py-to-exe</a>.<br>
  <p>To create executable .exe file type in the console:
 
 ```Python
