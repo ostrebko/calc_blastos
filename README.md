@@ -52,16 +52,43 @@ The purpose of this project is to create an application for calculating the numb
 
 
 ## Project structure
-...
-...
-...
+<details>
+  <summary>display project structure </summary>
+
+```Python
+
+calc_blastos
+├── config
+│   └── data_config.json       ## congiguration file
+├── image_folder
+│   ├── images_to_predict      ## folder for images to detection (put folders with photos)
+│   └── predicted_images       ## folder with detection results (photos, reports)
+├── model
+│   ├── weights_1476_150_ep.pt ## trained model 1
+│   └── weights_1476_450_ep.pt ## trained model 2
+├── utilits                    ## folder with custom functions and classes
+│   ├──  __ init __.py
+│   ├── calcs_boxes.py
+│   ├── functions.py
+│   ├── model_loader.py
+│   └── read_config.py
+├── yolov5                     ## folder with yolov5 app from ultralitics git 
+├── Dockerfile
+├── main.exe                   ## file to run project in windows (without python & docker)
+├── main.py
+├── README.md
+└── requirements.txt
+
+```
+</details>
 
 
 ## Data and methods
+<details>
 ...
 ...
 ...
-
+</details>
 
 ## Instalation
 <details>
