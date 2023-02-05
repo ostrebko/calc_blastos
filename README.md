@@ -5,10 +5,10 @@
 * [Introduction](README.md#Introduction)
 * [Project structure](README.md#Project-structure)
 * [Data and methods](README.md#Data-and-methods)
-* [Activation the virtual environment](README.md#Activation-env)
 * [Installation](README.md#Installation)
+* [Activation the virtual environment](README.md#Activation-env)
 * [Docker](README.md#Docker)
-* [Create .exe](README.md#Create-exe)
+* [Creation exe](README.md#Creation-exe)
 * [Inference](README.md#Inference)
 * [Experimental data analysis](README.md#Experimental-data-analysis)
 * [Machine learning models structure](README.md#Machine-learning-models-structure)
@@ -53,10 +53,10 @@ The purpose of this project is to create an application for calculating the numb
 
 ## Project structure
 <details>
-  <summary>display project structure </summary>
+
+<summary>Display project structure </summary> <br>
 
 ```Python
-
 calc_blastos
 ├── config
 │   └── data_config.json       ## congiguration file
@@ -78,7 +78,6 @@ calc_blastos
 ├── main.py
 ├── README.md
 └── requirements.txt
-
 ```
 </details>
 
@@ -92,22 +91,27 @@ calc_blastos
 
 ## Instalation
 <details>
-  
-<summary> Details: </summary> <br>
 
-<p> This section provides a sequence of steps for installing and launching the application <br>
+<summary> Display how to install app </summary> <br>
+
+<p> This section provides a sequence of steps for installing and launching the application. <br>
 
 ```Python
 # 1. Activate the virtual environment in which you plan to launch the application (we will use VsCode)
 
-# 2. ...
-bash command
+# 2. Clone repository
+git clone https://github.com/ostrebko/calc_blastos.git
 
-# 3. ...
-bash command
+# 3. Go to the new directory:
+cd calc_blastos
 
-# 4. ...
-bash command
+# 4. Install requirements:
+pip install -r requirements.txt
+
+# 5. Place folders with groups of photos in the 'image_folder\images_to_predict' folder. To name folders, use only Latin letters, numbers (digits) and "_" instead of spaces.
+
+# 6. Create predicts of detection blastospores with main.py or main.exe (in windows).
+python main.py
 ```
 </details>
 
@@ -142,7 +146,7 @@ env\Scripts\activate.ps1
 ## Docker
 <details>
 
-<summary> Type in the console: </summary> <br>
+<summary> Display how to create and run docker image  </summary> <br>
 
 ```Python
 # 1. Create a new image (its size is approximately 5.2 Gb)
@@ -163,10 +167,10 @@ docker rmi calc_blastos
 
 
 
-## Create exe
+## Creation exe
 <details>
 
-<summary> Description: </summary> <br>
+<summary> Display how to create exe-file  </summary> <br>
 
 <p>Creating executable .exe file to run the application may be necessary in some cases. For example, if Docker and/or Python are not installed on the computer, the user does not have the minimum skills to install and configure the necessary programs and libraries, or it is impossible to prepare the computer accordingly beforehand (when demonstrating the program on the Director's or Customer's computer).<br>
 <p>To create executable .exe file we will use: <a href="www.pyinstaller.org">PyInstaller</a> and the convenient GUI add-in <a href="https://pypi.org/project/auto-py-to-exe/">auto-py-to-exe</a>.<br>
