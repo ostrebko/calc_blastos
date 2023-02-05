@@ -22,7 +22,7 @@
   src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Beauveria.jpg"
   alt="Grasshoppers (Melanoplus sp.) killed by the fungus Beauveria bassiana (from wikipedia.org)"
   title="Grasshoppers (Melanoplus sp.) killed by the fungus Beauveria bassiana (from wikipedia.org)"
-  style="display: inline-block; max-width: 360px">
+  style="display: inline-block; width: 30%">
 </p>
 
 <p>The most important characteristic of a biopreparation based on an a priori effective strain of entomopathogen is the number of viable cells/mycelium particles/fungal spores per unit volume or mass of the preparation. This indicator is often determined both in the process of developing a biological product and in its industrial production. When using deep cultivation of B. bassiana to obtain live biomass, the main infectious particles in the final product are blastospores – yeast-like single cells. A convenient and fast (not requiring the cultivation of mushroom colonies) method for determining the number of blastospores in a product is direct counting in a counting chamber of a particular design using a microscope; this procedure is well applicable in production processes, but when conducting research on the creation of a bioinsecticide, it takes a lot of the researcher's time, especially if it is necessary to obtain the most reliable data when determining the number of blastospores.</p>
@@ -32,7 +32,7 @@
   src="image_folder\images_to_predict\ex_folder_1\1.jpg"
   alt="Blastospores in a photograph taken with a microscope"
   title="Blastospores in a photograph taken with a microscope"
-  style="display: inline-block; max-width: 360px">
+  style="display: inline-block; width: 30%">
 </p>
 
 <p>An alternative to direct counting in real time can be automatic software counting of blastospores in photographs. The standard for obtaining data from a single measurement is the counting of particles in 16 large squares of the counting chamber. It is assumed that processing the same or twice as many photos with software tools will allow obtaining reliable data in a much shorter time and with minimal direct participation of the researcher.</p>
@@ -42,7 +42,7 @@
   src="image_folder\predicted_images\ex_folder_1\1.jpg"
   alt="The blastospores predicted in the photo by the AI model"
   title="The blastospores predicted in the photo by the AI model"
-  style="display: inline-block; max-width: 360px">
+  style="display: inline-block; width: 30%">
 </p>
 
 <p>The purpose of this project is to create an application for calculating the number of blastospores in photographs, followed by obtaining averaged values of the number of blastospores for the necessary groups of photos. The application uses a locally downloaded repository of the github project [YOLOv5](https://github.com/ultralytics/yolov5) from the developer company [Ultralytics](https://ultralytics.com). A pre-trained YOLOv5 model is used to detect blastospores. A detailed description of the steps for training the model is given in the second part of the [final project](https://github.com/ostrebko/skf_final_project), which was performed during the course "Specialization DataScience" in the online school [SkillFactory](https://skillfactory.ru).</p>  
