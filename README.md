@@ -32,7 +32,7 @@
   src="image_folder\images_to_predict\ex_folder_1\1.jpg"
   alt="Blastospores in a photograph taken with a microscope"
   title="Blastospores in a photograph taken with a microscope"
-  style="display: inline-block; width: 30%">
+  style="display: inline-block; width: 40%">
 </p>
 
 <p>An alternative to direct counting in real time can be automatic software counting of blastospores in photographs. The standard for obtaining data from a single measurement is the counting of particles in 16 large squares of the counting chamber. It is assumed that processing the same or twice as many photos with software tools will allow obtaining reliable data in a much shorter time and with minimal direct participation of the researcher.</p>
@@ -42,7 +42,7 @@
   src="image_folder\predicted_images\ex_folder_1\1.jpg"
   alt="The blastospores predicted in the photo by the AI model"
   title="The blastospores predicted in the photo by the AI model"
-  style="display: inline-block; width: 30%">
+  style="display: inline-block; width: 40%">
 </p>
 
 <p>The purpose of this project is to create an application for calculating the number of blastospores in photographs, followed by obtaining averaged values of the number of blastospores for the necessary groups of photos. The application uses a locally downloaded repository of the github project [YOLOv5](https://github.com/ultralytics/yolov5) from the developer company [Ultralytics](https://ultralytics.com). A pre-trained YOLOv5 model is used to detect blastospores. A detailed description of the steps for training the model is given in the second part of the [final project](https://github.com/ostrebko/skf_final_project), which was performed during the course "Specialization DataScience" in the online school [SkillFactory](https://skillfactory.ru).</p>  
@@ -138,7 +138,7 @@ python -m venv env
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 # 3. Enter the environment folder (env), run the command
-env\Scripts\activate.ps1
+.venv/Scripts/Activate.ps1
 
 # 4. An environment marker (env) will appear at the beginning of the line in PowerShell, but VS Code may still not know anything about it. Press Ctrl+Shift + P, type Python: Select Interpreter
 # Specify the desired path to python.exe in the env environment folder, this will be displayed at the bottom of the status bar. Now you can install modules only for a specific project.
@@ -250,7 +250,26 @@ or create & run main.exe in windows (see section 'Create exe').</p>
 
 ## Conclusions
 <details>
-...
-...
-...
+
+<p> Add conclusions what be produced after creating project </p>
+
+<p>The models given in this project show a good quality of blastospore detection: according to the mAP50 metric - 0.962, and according to the mAP50 metric-95: 0.463. More careful selection of parameters and longer training of models can improve these metrics, but their publication in this project is not planned, since the results of the work will be used for a specific production. It should also be noted that the resulting quality of the models still does not allow for automatic data generation, i.e. increase the amount of marked-up data in automatic mode to improve the prediction quality (the quality of the mAP50-95 metric should be at least 0.8).</p>
+
+<p>It should also be noted that the applied estimate of the average number of blastospores in the considered areas of photographs is quite conservative, and it would be necessary to determine the boundaries of the marking grid to more accurately determine the number of blastospores in the areas of interest, but this task is more difficult to implement, and leads us to:   
+
+- to capture neighboring areas when determining the boundaries of the grid: the grid is often rotated by a small angle to the horizontal, and bounding boxes does not have a rotation parameter, so adding blastospores to the current layout of the markup for the grid can still give an overestimation in number due to the areas adjacent to the grid;  
+- to the need to solve the joint task of segmenting the grid and detecting blastospores with two models with post-processing of prediction results (re-marking data for segmenting blastospores is time-consuming and may take 2-3 months, which is quite a lot in terms of resources spent);  
+- or to find another way to find the boundaries of the grid and highlight the area under consideration without using machine learning models, for example, with using the opencv library.</p>
+
+<p>In defense of the chosen method of assessment, it is worth noting that averaging over groups of photographs during the growth of microorganisms in daily calculations gave deviations of up to 6-7% on average (in some cases up to 10%) compared with "manual" counting within the boundaries of the marking grid of the Goryaev camera. We assume that the researcher with long-term "manual" calculations will also give an error of at least 5% compared to the ideal case, which is already comparable to the quality of the model.</p>
+
+<p>However, the most important comments were given to me by the head of the laboratory when discussing the above issue:
+
+- the possible daily growth of microorganisms in the bioreactor gives at least 50% with well-chosen experimental parameters and significantly exceeds the resulting calculation error;  
+- when introduced into industrial production, the best growth parameters of microorganisms obtained in the microlaboratory are used, which means that during production, the growth of world organisms in industrial biorectors is also at least 50%.</p>  
+
+<p>In connection with the above, it was decided to start working with the described estimated (conservative) calculations.</p>
+
+<p>I think that the comments above should have been added in connection with possible criticism of the chosen method of calculation. The work on preliminary determination of the grid boundaries will be carried out in the future if the accuracy of the selected calculation method becomes insufficient.</p>
+
 </details>
