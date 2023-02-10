@@ -1,5 +1,11 @@
 # Detection of blastospores in photographs with YOLOv5
 
+## Summary
+
+<p>This application allows to optimize the working time of a qualified scientific researcher, excluding the "manual" counting of the number of blastospores (microorganisms) using a microscope in the considered area of the Goryaev's chamber. To solve the problem, an automated calculation of the number of blastospores in the photographs of the calculated areas obtained using a microscope is performed. The application detects blastospores in photos using a pre-trained YOLOv5 model and data processing (counting and averaging the number of bounding boxes by groups of photos), followed by saving the calculation results to files. </p>
+
+
+
 ## Contents
 
 * [Introduction](README.md#Introduction)
@@ -15,7 +21,7 @@
 
 ## Introduction
 
-<p>Entomopathogenic fungus Beauveria bassiana is a promising basis for biological insecticides for use in crop production. Its ability to cause a deadly infectious process in a wide range of insect pest species makes it possible to create biological preparations based on strains of this species that are not inferior in effectiveness to a significant number of modern chemical insecticides. In addition, biologics based on B. bassiana has a number of advantages over chemical analogues – they are much safer for humans, plants and other environmental objects, have a lower cost, and also often provide a longer protective effect, due to the ability to cause epidemics in insect populations with a high number of individuals (overpopulated populations).</p>  
+<p>Entomopathogenic fungus Beauveria bassiana is a promising basis for biological insecticides for use in crop production. Its ability to cause a deadly infectious process in a wide range of insect pest species makes it possible to create biological preparations based on strains of this species that are not inferior in effectiveness to a significant number of modern chemical insecticides. In addition, biologics based on B. bassiana has a number of advantages over chemical analogues – they are much safer for humans, plants and other environmental objects, have a lower cost, and also often provide a longer protective effect, due to the ability to cause epidemics in insect populations with a high number of individuals (overpopulated populations).</p> 
 
 <p align="center"> 
 <img
