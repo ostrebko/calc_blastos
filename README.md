@@ -109,13 +109,13 @@ calc_blastos
 <p> This section provides a sequence of steps for installing and launching the application. <br>
 
 ```Python
-# 1. Activate the virtual environment in which you plan to launch the application (we will use VsCode)
-
-# 2. Clone repository
+# 1. Clone repository
 git clone https://github.com/ostrebko/calc_blastos.git
 
-# 3. Go to the new directory:
+# 2. Go to the new directory:
 cd calc_blastos
+
+# 3. Activate the virtual environment in which you plan to launch the application (we will use VsCode)
 
 # 4. Install requirements:
 pip install -r requirements.txt
@@ -138,7 +138,7 @@ python main.py
 ```Python
 # Steps to activate the virtual environment in which you plan to launch the application in VsCode:
 # 1. Run VS Code as an administrator, go to the project directory in PowerShell, execute the code below, the env folder containing the virtual environment files will appear
-python -m venv env
+python -m venv .venv
 
 # 2. To change the policy, in PowerShell type
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -146,8 +146,14 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 # 3. Enter the environment folder (env), run the command
 .venv/Scripts/Activate.ps1
 
-# 4. An environment marker (env) will appear at the beginning of the line in PowerShell, but VS Code may still not know anything about it. Press Ctrl+Shift + P, type Python: Select Interpreter
+# 4a. An environment marker (env) will appear at the beginning of the line in PowerShell, but VS Code may still not know anything about it. Press Ctrl+Shift+P, type Python: Select Interpreter
 # Specify the desired path to python.exe in the env environment folder, this will be displayed at the bottom of the status bar. Now you can install modules only for a specific project.
+
+# 4b. For VSCode, your Jupyter kernel is not necessarily using the same python interpreter you're using at the command line but if you have special libs you may need to using your notebook in created virtual environment. 
+# For using your notebook in created virtual environment install ipykernel:
+pip install ipykernel
+# then tap Ctrl+Shift+P to open the Command Palette, and select "Notebook: Select Notebook Kernel" ->
+# -> Select another kernel -> Python Environments -> choose the interpreter you're using at the terminal (we create virtual environment with name: .venv)
 
 # 5. If you need to exit, then execute deactivate in PowerShell, and return to global in the interpreter selection.
 ```
