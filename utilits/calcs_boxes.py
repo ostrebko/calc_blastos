@@ -80,9 +80,10 @@ class BoxesOneImgNums():
                 os.mkdir(os.path.join(config.path_to_predicted_images, folder_name))
             save_file = os.path.join(config.path_to_predicted_images, folder_name, img_name)
             plt.savefig(save_file, bbox_inches='tight', dpi=300)
-            plt.close(fig) 
+            plt.close(fig)
+            np.savetxt(os.path.join(config.path_to_predicted_images, folder_name, img_name[:-4]) + '_boxes.txt', boxes)
             
-        return numb_blasto
+        return numb_blasto #numb_blasto(boxes, )
     
 
     def calc_boxes_in_grid(self, img_path, model_yolov5, config):
