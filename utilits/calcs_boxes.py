@@ -99,10 +99,10 @@ class BoxesOneImgNums():
             plt.rcParams["figure.figsize"] = (12,8)
             fig, ax = plt.subplots()
             
-            if self.mask_grid==None:
+            if self.config.type_clc=='simple':
                 # to save boxes without mask
                 plt.imshow(resized_image)
-            else:
+            elif self.config.type_clc=='in_grid':
                 # to save boxes with mask
                 masked_original_image = Image.open(
                     os.path.join(self.config.path_to_predicted_images, self.folder_name, self.img_name))

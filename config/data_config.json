@@ -47,7 +47,7 @@
   "bbox_conf" : 0.5, 
 
   "//" : "Параметр выбора способа оценки кол-ва бластоспор - 'simple' или 'in_grid'",
-  "type_clc" : "simple", 
+  "type_clc" : "in_grid", 
 
 
 
