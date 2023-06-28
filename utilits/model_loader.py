@@ -10,6 +10,7 @@ import torch
 
 
 class LoadModel():
+    
     """
     Decription ...
     
@@ -50,5 +51,7 @@ class LoadModel():
                                        config.path_to_model, config.model_name), 
                                    device=config.device, 
                                    force_reload=config.force_reload)
+        
         model.max_det = 2000
+        
         return model

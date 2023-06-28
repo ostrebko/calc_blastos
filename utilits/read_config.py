@@ -3,6 +3,7 @@ import json
 from dotmap import DotMap
 
 def config_reader(path_to_json_conf: str) -> dict:
+    
     """Функция загрузки параметров конфигурации в память.
 
     Args:
@@ -13,6 +14,7 @@ def config_reader(path_to_json_conf: str) -> dict:
     ------------
     config (dict): словарь с параметрами конфигурации
     """    
+    
     with open(path_to_json_conf, 'r') as config_file:
         config_dict = json.load(config_file)
     
