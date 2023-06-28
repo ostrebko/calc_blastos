@@ -3,19 +3,24 @@ import os
 import glob
 import shutil
 import string
+import numpy as np
 import pandas as pd
 from utilits.read_config import config_reader
 from utilits.model_loader import LoadModel
 from utilits.calcs_boxes import BoxesAvgNums
 
 
-#def clear_folder(path_to_folder):
-    #files_to_remove = glob.glob(os.path.join(path_to_folder, '*'))
-    #for f in files_to_remove:
-    #    shutil.rmtree(f)
-
-
 def create_report(config):
+    
+    """
+    Decription ...
+    
+    Args:
+    -------------
+    config (_dict_) - словарь с конфигурацией
+    ...
+    """
+    
     path_to_pred_img = config.path_to_predicted_images
     names_pred_list = sorted(os.listdir(path_to_pred_img))
     
@@ -30,7 +35,7 @@ def create_report(config):
         for fold_name in names_pred_list:
             csv_file = pd.read_csv(glob.glob(os.path.join(path_to_pred_img, fold_name,'*.csv'))[0],
                                    delimiter=';',
-                                   names=['filename', 'all_calc', 'reduce_calc'],
+                                   names=['filename', 'all_calc'], #, 'reduce_calc'],
                                    index_col=False)
             
             # создание одинакового отступа при смещении записи по строкам
@@ -46,7 +51,7 @@ def create_report(config):
             csv_file.to_excel(writer, 'Sheet1', 
                             startcol=col_start_rec, 
                             startrow=row_start_rec, 
-                            header=['folder: '+ fold_name, 'all_calc', 'reduce_calc'],
+                            header=['folder: '+ fold_name, 'all_calc'], #'reduce_calc'],
                             index=False
                             )
             
@@ -74,6 +79,15 @@ def create_report(config):
 
 def calc_avg_wth_crt_reprt(path_to_config): #='config/data_config.json'
     
+    """
+    Decription ...
+    
+    Args:
+    -------------
+    config (_dict_) - словарь с конфигурацией
+    ...
+    """
+
     intro_text = ("\n" 
                   "This app allows to calculate average number of blastospores on photos in one folder "
                   "\n" "or average number of blastospores on photos in multiple folder "
@@ -83,12 +97,33 @@ def calc_avg_wth_crt_reprt(path_to_config): #='config/data_config.json'
     config = config_reader(path_to_config)
     model = LoadModel(config).loaded_model
     
-    shutil.rmtree(config.path_to_predicted_images)
-    #clear_folder(config.path_to_predicted_images)
+    if os.path.isdir(config.path_to_predicted_images):
+        shutil.rmtree(config.path_to_predicted_images)
+    
     for fold_name in os.listdir(config.path_to_images):
         #if os.path.isdir(os.path.join(config.path_to_predicted_images, fold_name)):
         #    shutil.rmtree(os.path.join(config.path_to_predicted_images, fold_name))
-        os.makedirs(os.path.join(config.path_to_predicted_images, fold_name))
+        os.makedirs(os.path.join(config.path_to_predicted_images, fold_name)) 
         BoxesAvgNums(fold_name, model, config)
     create_report(config)
     print('Well done!!!')
+
+
+def ch_str(str_with_nums):
+
+    """
+    Decription ...
+    
+    Args:
+    -------------
+    config (_dict_) - словарь с конфигурацией
+    ...
+    """
+
+    return np.array(list(map(float, str_with_nums.strip().split()))).astype(int)
+
+
+#def clear_folder(path_to_folder):
+    #files_to_remove = glob.glob(os.path.join(path_to_folder, '*'))
+    #for f in files_to_remove:
+    #    shutil.rmtree(f)
